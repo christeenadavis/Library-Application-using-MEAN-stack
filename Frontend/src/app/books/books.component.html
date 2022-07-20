@@ -1,0 +1,49 @@
+<app-header></app-header>
+<router-outlet></router-outlet>
+<div class='card'>
+    <div class='card-header'>
+     {{pageTitle}}
+
+    </div>
+    
+    <div class='card-body'>            
+      <div class='table-responsive'>
+        <table class='table'
+              *ngIf = 'books && books.length'>
+          <thead>
+            <tr>
+              <th>
+                <button class='btn btn-primary'
+                (click)='toggleImage()'>
+                  {{showImage? 'Hide' : 'Show'}} Image
+                </button>
+              </th>
+              <th>Name of the Book</th>
+              <th>Author</th>
+              <th>Description</th>
+                        
+          </thead>
+          <tbody>  
+              <tr *ngFor='let book of books'>
+                  <td><img *ngIf='showImage'
+                    [src] = 'book.imageUrl' 
+                    [title] = 'book.bookName'
+                    [style.width.px] = 'imageWidth' 
+                    [style.margin.px] = 'imageMargin'></td>
+                  <td>{{ book.bookName }}</td>
+                  <td>{{ book.bookAuthor }}</td>
+                  <td><p>{{ book.description }}</p></td>
+                  <td>
+                    <button class="btn btn-warning" style="cursor:pointer" (click)="editBook(book)"style="margin-left: 10px;"> Edit</button>
+                    <button class="btn btn-danger" style="cursor:pointer" (click)="deleteBook(book)" > Delete</button>
+                  </td>
+                </tr>              
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- *ngIf="_auth.loggedIn()"(click)="deleteBook(book.bookName)" -->
+  <!-- *ngIf="_auth.loggedIn()" (click)="editBook(book.bookName)" -->

@@ -1,0 +1,26 @@
+.wrapper{ 
+    margin: 0; 
+    height: 710px; 
+    -o-repeat: center center fixed;
+    color: rgb(146, 19, 19);
+    background-image: url("..//../assets/images/background3jpg.jpg");  
+    background-size: 100% ; 
+    -webkit-background-size: cover; 
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;  
+}   
+    .heading{
+        color: blue;
+        /* background-color: rgba(19, 3, 32, 0.908); */
+        text-align:left
+            
+    }
+   button{
+    margin-left: 20px;
+   }
+   button a{
+   color: black;
+     
+   }
